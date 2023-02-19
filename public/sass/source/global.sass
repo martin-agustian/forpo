@@ -1,0 +1,2192 @@
+@import "variable"
+@import "mixin"
+
+
+// ----------------------------------------- HTML TAG ----------------------------------------- //
+
+// ** Font Family
+@font-face
+    font-family: 'poppins-reguler'
+    src: url('../fonts/Poppins/Poppins-Regular.ttf')
+    font-display: swap
+
+@font-face
+    font-family: 'poppins-semi-bold'
+    src: url('../fonts/Poppins/Poppins-SemiBold.ttf')
+    font-display: swap
+
+@font-face
+    font-family: 'poppins-bold'
+    src: url('../fonts/Poppins/Poppins-Bold.ttf')
+    font-display: swap
+
+@font-face
+    font-family: 'roboto-reguler'
+    src: url('../fonts/Roboto/Roboto-Regular.ttf')
+    font-display: swap
+
+
+// ** HTML, Body
+html, body
+    position: relative
+    min-width: 320px
+    font-family: 'poppins-reguler'
+    font-size: $font-sm
+    color: $color-black
+    background-color: $color-white
+    padding: 0
+    margin: 0
+    scroll-behavior: smooth
+
+
+// ** Header Classes
+.header
+    font-size: $font-xs
+    color: $color-default
+    background-color: $color-white
+    a
+        color: $color-default
+        &:hover
+            color: $color-one
+    &-fixed
+        position: fixed
+        top: 0
+        z-index: 1020
+        width: 100%
+        background-color:  $color-white
+        box-shadow: $shadow-sm
+        border-bottom: $border-default
+        -webkit-transition: all 0.25s
+        -moz-transition: all 0.25s
+        -ms-transition: all 0.25s
+        -o-transition: all 0.25s
+        transition: all 0.25s
+
+
+// ** Html Tag
+
+    
+a
+    text-decoration: none !important
+    color: $color-one
+
+button
+    color: inherit
+    background-color: transparent
+    border-style: none
+    padding: 0.375rem 0.75rem
+    box-shadow: none !important
+    &:focus
+        outline: none
+        box-shadow: none !important
+
+img
+    &:focus
+        outline: none
+
+input
+    filter: none
+    box-shadow: none !important
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button
+        -webkit-appearance: none
+        margin: 0
+    /* Firefox */
+    &[type=number]
+        -moz-appearance: textfield
+
+p
+    color: $color-grey
+    line-height: 1.55rem
+
+select
+    -webkit-appearance: none
+    -moz-appearance: none
+    background: transparent
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>")
+    background-repeat: no-repeat
+    background-position-x: 98%
+    background-position-y: 8px
+    border: $border-default
+    padding: $gap-3
+    padding-right: $gap-4 !important
+
+
+// ----------------------------------------- CLASS ----------------------------------------- //
+
+// ** Badge Classes
+.badge
+    display: inline-block
+    font-size: 75%
+    line-height: $line-height-sm
+    font-weight: 700
+    text-align: center
+    white-space: nowrap
+    vertical-align: baseline
+    border-radius: $radius-sm
+    padding: 0.3rem $gap-2
+
+// Size
+.badge
+    &-xs
+        @extend .badge
+        font-size: $font-xs
+        padding: 0.3rem $gap-2
+    &-sm
+        @extend .badge
+        font-size: $font-sm
+        padding: $gap-2 $gap-3
+    &-md
+        @extend .badge
+        font-size: $font-md
+        padding: $gap-2 $gap-3
+    &-lg
+        @extend .badge
+        font-size: $font-lg
+        padding: 0.6rem 1.25rem
+    &-xl
+        @extend .badge
+        font-size: $font-xl
+        padding: 0.75rem 2rem
+
+
+// Shape
+.badge
+    &-pill
+        @extend .badge
+        @extend .pill
+        &-xs
+            @extend .badge-pill
+            @extend .badge-xs            
+        &-sm
+            @extend .badge-pill
+            @extend .badge-sm            
+        &-md
+            @extend .badge-pill
+            @extend .badge-md
+        &-lg
+            @extend .badge-pill
+            @extend .badge-lg         
+        &-xl
+            @extend .badge-pill
+            @extend .badge-xl
+
+.badge
+    &-circle
+        @extend .badge
+        @extend .circle
+        &-xs
+            @extend .badge-circle
+            @extend .circle-xs            
+        &-sm
+            @extend .badge-circle
+            @extend .circle-sm            
+        &-md
+            @extend .badge-circle
+            @extend .circle-md
+        &-lg
+            @extend .badge-circle
+            @extend .circle-lg         
+        &-xl
+            @extend .badge-circle
+            @extend .circle-xl
+
+
+// ** Border Classes
+.border
+    border: $border-default
+    &-dashed
+        border: $border-xs dashed $border-color
+    &-dotted
+        border: $border-xs dotted $border-color
+    &-double
+        border: $border-xs double $border-color
+    &-none
+        border: $border-xs none $border-color
+    &-hidden
+        border: $border-xs hidden $border-color
+
+// Style
+.border
+    &-style-dashed
+        border-style: dashed
+    &-style-dotted
+        border-style: dotted
+    &-style-double
+        border-style: double
+    &-style-none
+        border-style: none
+    &-style-hidden
+        border-style: hidden
+
+// Size
+.border
+    &-xs
+        border-width: $border-xs
+    &-sm
+        border-width: $border-sm
+    &-md
+        border-width: $border-md
+    &-lg
+        border-width: $border-lg
+
+// Color
+.border
+    &-one
+        border-color: $color-one
+    &-two
+        border-color: $color-two
+    &-three
+        border-color: $color-three
+    &-black
+        border-color: $color-black
+    &-white
+        border-color: $color-white
+    &-grey
+        border-color: $color-grey
+    &-red
+        border-color: $color-red
+    &-orange
+        border-color: $color-orange    
+    &-yellow
+        border-color: $color-yellow
+    &-green
+        border-color: $color-green
+    &-blue
+        border-color: $color-blue
+    &-pink
+        border-color: $color-pink
+    &-brown
+        border-color: $color-brown
+    &-purple
+        border-color: $color-purple
+
+.border
+    &-one-2
+        border-color: $color-one-2
+    &-two-2
+        border-color: $color-two-2
+    &-three-2
+        border-color: $color-three-2
+    &-black-2
+        border-color: $color-black-2
+    &-white-2
+        border-color: $color-white-2
+    &-grey-2
+        border-color: $color-grey-2
+    &-red-2
+        border-color: $color-red-2
+    &-orange-2
+        border-color: $color-orange-2  
+    &-yellow-2
+        border-color: $color-yellow-2
+    &-green-2
+        border-color: $color-green-2
+    &-blue-2
+        border-color: $color-blue-2
+    &-pink-2
+        border-color: $color-pink-2
+    &-brown-2
+        border-color: $color-brown-2
+    &-purple-2
+        border-color: $color-purple-2
+
+// Side
+.border
+    &-top
+        &-xs
+            border-top-width: $border-xs !important
+        &-sm
+            border-top-width: $border-sm !important
+        &-md
+            border-top-width: $border-md !important
+        &-lg
+            border-top-width: $border-lg !important
+    &-bottom
+        &-xs
+            border-bottom-width: $border-xs !important
+        &-sm
+            border-bottom-width: $border-sm !important
+        &-md
+            border-bottom-width: $border-md !important
+        &-lg
+            border-bottom-width: $border-lg !important
+    &-left
+        &-xs
+            border-left-width: $border-xs !important
+        &-sm
+            border-left-width: $border-sm !important
+        &-md
+            border-left-width: $border-md !important
+        &-lg
+            border-left-width: $border-lg !important
+    &-right
+        &-xs
+            border-right-width: $border-xs !important
+        &-sm
+            border-right-width: $border-sm !important
+        &-md
+            border-right-width: $border-md !important
+        &-lg
+            border-right-width: $border-lg !important
+
+.border
+    &-top
+        &-one
+            border-top-color: $color-one !important
+        &-two
+            border-top-color: $color-two !important
+        &-three
+            border-top-color: $color-three !important
+        &-black
+            border-top-color: $color-black !important
+        &-white
+            border-top-color: $color-white !important
+        &-grey
+            border-top-color: $color-grey !important
+        &-red
+            border-top-color: $color-red !important
+        &-orange
+            border-top-color: $color-orange !important
+        &-yellow
+            border-top-color: $color-yellow !important
+        &-green
+            border-top-color: $color-green !important
+        &-blue
+            border-top-color: $color-blue !important
+        &-pink
+            border-top-color: $color-pink !important
+        &-brown
+            border-top-color: $color-brown !important
+        &-purple
+            border-top-color: $color-purple !important
+    &-bottom
+        &-one
+            border-bottom-color: $color-one !important
+        &-two
+            border-bottom-color: $color-two !important
+        &-three
+            border-bottom-color: $color-three !important
+        &-black
+            border-bottom-color: $color-black !important
+        &-white
+            border-bottom-color: $color-white !important
+        &-grey
+            border-bottom-color: $color-grey !important
+        &-red
+            border-bottom-color: $color-red !important
+        &-orange
+            border-bottom-color: $color-orange !important
+        &-yellow
+            border-bottom-color: $color-yellow !important
+        &-green
+            border-bottom-color: $color-green !important
+        &-blue
+            border-bottom-color: $color-blue !important
+        &-pink
+            border-bottom-color: $color-pink !important
+        &-brown
+            border-bottom-color: $color-brown !important
+        &-purple
+            border-bottom-color: $color-purple !important
+    &-left
+        &-one
+            border-left-color: $color-one !important
+        &-two
+            border-left-color: $color-two !important
+        &-three
+            border-left-color: $color-three !important
+        &-black
+            border-left-color: $color-black !important
+        &-white
+            border-left-color: $color-white !important
+        &-grey
+            border-left-color: $color-grey !important
+        &-red
+            border-left-color: $color-red !important
+        &-orange
+            border-left-color: $color-orange !important
+        &-yellow
+            border-left-color: $color-yellow !important
+        &-green
+            border-left-color: $color-green !important
+        &-blue
+            border-left-color: $color-blue !important
+        &-pink
+            border-left-color: $color-pink !important
+        &-brown
+            border-left-color: $color-brown !important
+        &-purple
+            border-left-color: $color-purple !important
+    &-right
+        &-one
+            border-right-color: $color-one !important
+        &-two
+            border-right-color: $color-two !important
+        &-three
+            border-right-color: $color-three !important
+        &-black
+            border-right-color: $color-black !important
+        &-white
+            border-right-color: $color-white !important
+        &-grey
+            border-right-color: $color-grey !important
+        &-red
+            border-right-color: $color-red !important
+        &-orange
+            border-right-color: $color-orange !important
+        &-yellow
+            border-right-color: $color-yellow !important
+        &-green
+            border-right-color: $color-green !important
+        &-blue
+            border-right-color: $color-blue !important
+        &-pink
+            border-right-color: $color-pink !important
+        &-brown
+            border-right-color: $color-brown !important
+        &-purple
+            border-right-color: $color-purple !important
+
+
+// ** Breadcrumb Classes
+.breadcrumb
+    display: -ms-flexbox
+    display: flex
+    ms-flex-wrap: wrap
+    flex-wrap: wrap
+    list-style: none
+    background-color: $color-transparent
+    border-radius: 0.25rem
+    padding: $gap-2 0rem
+    margin: 0rem
+    &-item + &-item::before
+        display: inline-block
+        content: '>'
+        color: $color-grey
+        padding-right: $gap-2
+    &-item.active
+        color: $color-grey
+
+
+// ** Button Classes
+.btn
+    display: inline-block
+    font-weight: 400
+    color: $color-black
+    font-size: $font-sm
+    line-height: $line-height-md
+    text-align: center
+    vertical-align: middle
+    cursor: pointer
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    background-color: transparent
+    border: $border-default
+    border-radius: $radius-sm
+    padding: 0.375rem 0.75rem
+    &:focus
+        outline: none
+        box-shadow: none !important
+
+// Size
+.btn
+    &-xs
+        @extend .btn
+        font-size: $font-xs
+        padding: 0.2rem $gap-2
+    &-sm
+        @extend .btn
+        font-size: $font-sm
+        padding: 0.25rem 0.75rem
+    &-md
+        @extend .btn
+        font-size: $font-md
+        padding: 0.3rem 0.8rem
+    &-lg
+        @extend .btn
+        font-size: $font-lg
+        padding: 0.35rem 1rem
+    &-xl
+        @extend .btn
+        font-size: $font-xl
+        padding: 0.35rem 2rem
+
+// Shape
+.btn-pill
+    @extend .btn
+    @extend .pill
+    &-xs
+        @extend .btn-pill
+        @extend .btn-xs
+    &-sm
+        @extend .btn-pill
+        @extend .btn-sm
+    &-md
+        @extend .btn-pill
+        @extend .btn-md
+    &-lg
+        @extend .btn-pill
+        @extend .btn-lg
+    &-xl
+        @extend .btn-pill
+        @extend .btn-xl
+
+.btn-circle
+    @extend .btn
+    @extend .circle
+    &-xs
+        @extend .btn-circle
+        @extend .circle-xs
+    &-sm
+        @extend .btn
+        @extend .circle-sm
+    &-md
+        @extend .btn
+        @extend .circle-md
+    &-lg
+        @extend .btn
+        @extend .circle-lg
+    &-xl
+        @extend .btn
+        @extend .circle-xl
+
+
+.btn-label
+    position: relative
+    padding-left: 52px
+    overflow: hidden
+    & label
+        display: inline-block
+        position: absolute
+        left: 0
+        top: 0
+        bottom: 0
+        width: 36px
+        line-height: inherit
+        padding-top: 5px
+        padding-bottom: 5px
+        background-color: rgba(0,0,0,0.1)
+        cursor: pointer
+        margin-bottom: 0
+
+.btn-label-right
+    position: relative
+    padding-right: 52px
+    overflow: hidden
+    & label
+        display: inline-block
+        position: absolute
+        right: 0
+        top: 0
+        bottom: 0
+        width: 36px
+        line-height: inherit
+        padding-top: 5px
+        padding-bottom: 5px
+        background-color: rgba(0,0,0,0.1)
+        cursor: pointer
+        margin-bottom: 0
+    
+
+// Color
+.btn
+    &-one
+        background-color: $color-one !important
+        color: $color-white !important
+        border: $border-xs solid $color-one !important
+        &:hover,
+        &:active,
+        &:focus            
+            background-color: $color-hover-one !important
+            color: $color-white !important              
+            border: $border-xs solid $color-one !important  
+    &-two
+        background-color: $color-two !important
+        color: $color-white !important
+        border: $border-xs solid $color-two !important
+        &:hover,
+        &:active,
+        &:focus            
+            background-color: $color-hover-two !important
+            color: $color-white !important
+            border: $border-xs solid $color-two !important
+    &-three
+        background-color: $color-three !important
+        color: $color-white !important
+        border: $border-xs solid $color-three !important
+        &:hover,
+        &:active,
+        &:focus
+            background-color: $color-hover-three !important
+            color: $color-white !important
+            border: $border-xs solid $color-three !important
+    &-black
+        background-color: $color-black !important
+        color: $color-white !important
+        border: $border-xs solid $color-black !important
+        &:hover,
+        &:active,
+        &:focus
+            background-color: $color-hover-black !important
+            color: $color-white !important
+            border: $border-xs solid $color-black !important
+    &-white
+        background-color: $color-white !important
+        color: $color-black !important
+        border: $border-xs solid $color-white !important
+        &:hover,
+        &:active,
+        &:focus
+            background-color: $color-hover-white !important
+            color: $color-black !important
+            border: $border-xs solid $color-white !important
+    &-grey
+        background: $color-grey !important
+        color: $color-white !important
+        border: $border-xs solid $color-grey !important
+        &:hover,
+        &:active,
+        &:focus
+            background: $color-hover-grey !important
+            color: $color-white !important
+            border: $border-xs solid $color-grey !important
+    &-red
+        background-color: $color-red !important
+        color: $color-white !important
+        border: $border-xs solid $color-red !important
+        &:hover,
+        &:active,
+        &:focus
+            background-color: $color-hover-red !important
+            color: $color-white !important
+            border: $border-xs solid $color-red !important
+    &-orange
+        background-color: $color-orange !important
+        color: $color-white !important
+        border: $border-xs solid $color-orange !important
+        &:hover,
+        &:active,
+        &:focus            
+            background: $color-hover-orange !important
+            color: $color-white !important
+            border: $border-xs solid $color-orange !important
+    &-yellow
+        background-color: $color-yellow !important
+        color: $color-white !important
+        border: $border-xs solid $color-yellow !important
+        &:hover,
+        &:active,
+        &:focus            
+            background: $color-hover-yellow !important
+            color: $color-white !important
+            border: $border-xs solid $color-yellow !important
+    &-green
+        background-color: $color-green !important
+        color: $color-white !important
+        border: $border-xs solid $color-green !important
+        &:hover,
+        &:active,
+        &:focus            
+            background: $color-hover-green !important
+            color: $color-white !important
+            border: $border-xs solid $color-green !important
+    &-blue
+        background-color: $color-blue !important
+        color: $color-white !important
+        border: $border-xs solid $color-blue !important
+        &:hover,
+        &:active,
+        &:focus            
+            background: $color-hover-blue !important
+            color: $color-white !important
+            border: $border-xs solid $color-blue !important
+    &-pink
+        background-color: $color-pink !important
+        color: $color-white !important
+        border: $border-xs solid $color-pink !important
+        &:hover,
+        &:active,
+        &:focus            
+            background: $color-hover-pink !important
+            color: $color-white !important
+            border: $border-xs solid $color-pink !important
+    &-brown
+        background-color: $color-brown !important
+        color: $color-white !important
+        border: $border-xs solid $color-brown !important
+        &:hover,
+        &:active,
+        &:focus            
+            background: $color-hover-brown !important
+            color: $color-white !important
+            border: $border-xs solid $color-brown !important
+    &-purple
+        background-color: $color-purple !important
+        color: $color-white !important
+        border: $border-xs solid $color-purple !important
+        &:hover,
+        &:active,
+        &:focus            
+            background: $color-hover-purple !important
+            color: $color-white !important
+    &-outline
+        &-one
+            background: $color-white !important
+            color: $color-one !important
+            border: $border-xs solid $color-one !important
+            &:hover,
+            &:active,
+            &:focus                
+                background: $color-white !important
+                color: $color-hover-one !important
+                border: $border-xs solid $color-hover-one !important        
+        &-two
+            background: $color-white !important
+            color: $color-two !important
+            border: $border-xs solid $color-two !important
+            &:hover,
+            &:active,
+            &:focus                
+                background: $color-white !important
+                color: $color-hover-two !important
+                border: $border-xs solid $color-hover-two !important
+        &-three
+            background: $color-white !important
+            color: $color-three !important
+            border: $border-xs solid $color-three !important
+            &:hover,
+            &:active,
+            &:focus                
+                background: $color-white !important
+                color: $color-hover-three !important
+                border: $border-xs solid $color-hover-three !important
+        &-black
+            background: $color-white !important
+            color: $color-black !important
+            border: $border-xs solid $color-black !important
+            &:hover,
+            &:active,
+            &:focus
+                background: $color-white !important
+                color: $color-hover-black !important
+                border: $border-xs solid $color-hover-black !important
+        &-white
+            background: $color-white !important
+            color: $color-white !important
+            border: $border-xs solid $color-white !important
+            &:hover,
+            &:active,
+            &:focus
+                background: $color-white !important
+                color: $color-hover-white !important
+                border: $border-xs solid $color-hover-white !important
+        &-grey
+            color: $color-grey !important
+            background: $color-white !important
+            border-color: $color-grey !important
+            &:hover,
+            &:active,
+            &:focus                
+                color: $color-hover-grey !important
+                background: $color-white !important
+                border-color: $color-hover-grey !important
+        &-red
+            background: $color-white !important
+            color: $color-red !important
+            border: $border-xs solid $color-red !important
+            &:hover,
+            &:active,
+            &:focus
+                background: $color-white !important
+                color: $color-red !important
+                border: $border-xs solid $color-red !important
+        &-orange
+            background: $color-white !important
+            color: $color-orange !important
+            border: $border-xs solid $color-orange !important
+            &:hover,
+            &:active,
+            &:focus                
+                background: $color-white !important
+                color: $color-hover-orange !important
+                border: $border-xs solid $color-hover-orange !important
+        &-yellow
+            background: $color-white !important
+            color: $color-yellow !important
+            border: $border-xs solid $color-yellow !important
+            &:hover,
+            &:active,
+            &:focus                
+                background: $color-white !important
+                color: $color-hover-yellow !important
+                border: $border-xs solid $color-hover-yellow !important
+        &-green
+            background: $color-white !important
+            color: $color-green !important
+            border: $border-xs solid $color-green !important
+            &:hover,
+            &:active,
+            &:focus
+                background: $color-white !important
+                color: $color-hover-green !important
+                border: $border-xs solid $color-hover-green !important
+        &-blue
+            background: $color-white !important
+            color: $color-blue !important
+            border: $border-xs solid $color-blue !important
+            &:hover,
+            &:active,
+            &:focus
+                background: $color-white !important
+                color: $color-hover-blue !important
+                border: $border-xs solid $color-hover-blue !important
+        &-pink
+            background: $color-white !important
+            color: $color-pink !important
+            border: $border-xs solid $color-pink !important
+            &:hover,
+            &:active,
+            &:focus
+                background: $color-white !important
+                color: $color-hover-pink !important
+                border: $border-xs solid $color-hover-pink !important
+        &-brown
+            background: $color-white !important
+            color: $color-brown !important
+            border: $border-xs solid $color-brown !important
+            &:hover,
+            &:active,
+            &:focus
+                background: $color-white !important
+                color: $color-hover-brown !important
+                border: $border-xs solid $color-hover-brown !important
+        &-purple
+            background: $color-white !important
+            color: $color-purple !important
+            border: $border-xs solid $color-purple !important
+            &:hover,
+            &:active,
+            &:focus
+                background: $color-white !important
+                color: $color-hover-purple !important
+                border: $border-xs solid $color-hover-purple !important
+
+
+// ** Card Classes
+.card
+    position: relative
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-direction: column
+    flex-direction: column
+    min-width: 0
+    word-wrap: break-word
+    background-color: $color-white
+    background-clip: border-box
+    border: $border-xs solid $border-color
+    border-radius: 0.25rem
+    &-header
+        background-color: rgba(0, 0, 0, 0.03)
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125)
+        padding: $gap-4
+        margin-bottom: 0
+    &-body
+        -ms-flex: 1 1 auto
+        flex: 1 1 auto
+        min-height: 1px
+        padding: $gap-4
+
+.card        
+    &-img
+        &-xs
+            @include display-flex ($x: center, $y: center)
+            height: 100px
+        &-sm
+            @include display-flex ($x: center, $y: center)
+            height: 150px
+        &-md
+            @include display-flex ($x: center, $y: center)
+            height: 250px
+        &-lg
+            @include display-flex ($x: center, $y: center)
+            height: 300px
+
+
+// ** Cursor Classes
+.cursor
+    &-default
+        cursor: default
+    &-wait
+        cursor: wait
+    &-pointer
+        cursor: pointer
+    &-text
+        cursor: text    
+    &-crosshair
+        cursor: crosshair
+    &-not-allowed
+        cursor: not-allowed    
+    &-none
+        cursor: none
+    &-help
+        cursor: help
+    &-copy
+        cursor: copy
+
+
+// ** Displays Classes
+.block
+    display: block !important
+
+.none
+    display: none !important
+
+.inline-block
+    display: inline-block !important
+
+.table
+    display: table !important
+    &-row
+        display: table-row !important
+    &-column
+        display: table-column !important
+    &-cell
+        display: table-cell !important
+
+.flex
+    @include display-flex
+    @each $index, $value in $flex-directions
+        &-x-#{$index}
+            @include display-flex($x: $value)
+        &-y-#{$index}
+            @include display-flex($y: $value)
+        &-xy-#{$index}
+            @include display-flex($x: $value, $y: $value)
+        &-yx-#{$index}
+            @include display-flex($x: $value, $y: $value)
+
+
+// ** Filter Classes
+@for $i from 1 through 10
+    .filter
+        &-grayscale-#{$i * 10}
+            filter: grayscale($i * 10%)
+        &-opacity-#{$i * 10}
+            opacity: #{$i * 10%}
+        &-brightness-#{$i * 10}
+            filter: brightness($i * 10%)
+        &-blur-#{$i}
+            filter: blur($i+px)
+
+
+// ** Gutters Classes
+.gutters
+    &-mx-0
+        margin-left: 0
+        margin-right: 0
+    &-0px
+        @include gutters ($px: 0px)
+    &-2px
+        @include gutters ($px: 3px)
+    &-3px
+        @include gutters ($px: 3px)
+    &-4px
+        @include gutters ($px: 4px)
+    &-5px
+        @include gutters ($px: 5px)
+    &-6px
+        @include gutters ($px: 6px)    
+    &-7px
+        @include gutters ($px: 7px)    
+    &-8px
+        @include gutters ($px: 8px)        
+    &-9px
+        @include gutters ($px: 9px)
+    &-10px
+        @include gutters ($px: 10px)    
+    &-11px
+        @include gutters ($px: 11px)        
+    &-12px
+        @include gutters ($px: 12px)        
+    &-13px
+        @include gutters ($px: 13px)            
+    &-14px
+        @include gutters ($px: 14px)
+
+
+// ** Height, Width Classes
+@for $i from 1 through 10
+    // ** Width
+    .w-#{$i * 10}
+        width: #{$i * 10%}
+
+    .vw-#{$i * 10}
+        width: #{$i * 10%}
+
+    // ** Height
+    .h-#{$i * 10}
+        height: #{$i * 10%}
+
+    .vh-#{$i * 10}
+        height: #{$i * 10%}
+
+.stretch
+    &-min-50
+        min-width: 50%
+        min-height: 50%
+    &-50
+        width: 50%
+        height: 50%
+    &-max-50
+        max-width: 50%
+        max-height: 50%
+    &-min-100
+        min-width: 100%
+        min-height: 100%
+    &-100
+        width: 100%
+        height: 100%    
+    &-max-100
+        max-width: 100%
+        max-height: 100%
+
+
+// ** Hover Link Classes
+.hover-link:hover
+    .hover-target
+        color: $color-one !important
+
+
+// ** HR Classes
+.hr
+    &-dotted
+        border-top: $border-xs dotted #c8c8c8
+    &-dashed
+        border-top: $border-xs dashed #c8c8c8
+    &-divider
+        position: relative
+        & hr
+            @include position-absolute ($top: -5px, $right: 0, $left: 0)
+            color: #333333
+        &-small hr
+            top: -3px !important
+        & span
+            position: relative
+            background-color: $color-white
+            padding: 0 0.5rem !important
+        &-small span
+            font-size: 80%
+            font-weight: 400
+
+
+// ** Icon Classes
+.icon
+    &-xs
+        width: 12px
+        height: 12px
+    &-sm
+        width: 18px
+        height: 18px
+    &-md
+        width: 20px
+        height: 20px
+    &-lg
+        width: 26px !important
+        height: 26px !important
+    &-xl
+        width: 35px
+        height: 25px
+    
+
+// ** Inputs
+.input
+    // Overlay
+    &-append
+        display: flex
+        & input
+            padding: 0.5rem 53px 0.5rem 1rem
+        & button
+            color: #c6c6c6
+            margin-left: -50px
+            z-index: 1
+            &:focus
+                box-shadow: unset !important
+    &-prepend
+        display: flex
+        & input
+            padding: 0.5rem 1rem 0.5rem 48px
+        & button
+            color: #c6c6c6
+            margin-right: -43px
+            z-index: 1
+            &:focus
+                box-shadow: unset !important
+    &-append-prepend
+        display: flex
+        & input
+            padding: 0.375rem 53px 0.375rem 53px
+        & button
+            color: #c6c6c6
+            z-index: 1
+            &:first-child
+                margin-left: 10px
+                margin-right: -50px
+                &:focus
+                    box-shadow: unset !important
+            &:last-child
+                margin-left: -50px
+                &:focus
+                    box-shadow: unset !important
+    &-prepend-append
+        @extend .input-append-prepend
+
+.form
+    &-group
+        position: relative
+    &-control
+        border-radius: $radius-sm
+        &:focus
+            box-shadow: none !important
+        &-lg
+            border-radius: $radius-sm
+        &.is-invalid, &.is-valid
+            background-image: unset !important
+        &::placeholder
+            color: #e5e5e5 !important
+            opacity: 1 !important        
+        &-line
+            border-top: 0 !important
+            border-left: 0 !important
+            border-right: 0 !important
+            border-bottom: $border-default
+            border-radius: 0
+            padding: $gap-2 0 !important
+            &:focus
+                box-shadow: none !important
+
+.invalid-feedback
+    display: block !important
+
+
+// ** Label Image Classes
+.label
+    &-img-left
+        position: absolute
+        top: 7px
+        left: 20px
+        z-index: 1
+        border-radius: $radius-sm
+        padding: 2px 10px
+    &-img-right
+        position: absolute
+        top: 10px
+        right: 10px
+        z-index: 1
+        border-radius: $radius-sm
+    &-img-bottom
+        position: absolute
+        right: 24px
+        bottom: 7px
+
+
+// ** List Classes
+.list
+    &-group
+        &.list-unstyled-border
+            & li
+                border: none
+
+
+// ** Line Height
+.line-height
+    &-md
+        line-height: $line-height-md
+
+
+// ** Loading Classes
+.loading
+    @include display-flex($x: center, $y: center)
+    height: 100%
+    width: 100%
+    padding: $gap-5
+
+
+// ** Margin Classes
+.m
+    &-lg-auto
+        margin: 0 auto
+
+.mt
+    &-6
+        margin-top: 4rem
+    &-7
+        margin-top: 7rem
+    &-8
+        margin-top: 8rem
+
+.mb
+    &-6
+        margin-bottom: 4rem
+    &-7
+        margin-bottom: 7rem
+    &-8
+        margin-bottom: 8rem
+
+.mr
+    &-6
+        margin-right: 4rem
+    &-7
+        margin-right: 7rem
+    &-8
+        margin-right: 8rem
+
+.ml
+    &-6
+        margin-left: 4rem
+    &-7
+        margin-left: 7rem
+    &-8
+        margin-left: 8rem
+
+
+// ** Modal Classes
+.modal
+    padding: 0 !important
+    &-content
+        width: 100%
+        height: 100%
+    &-header
+        @include display-flex ($x: center, $y: center)
+        padding: $gap-4
+    &-body
+        padding: $gap-4
+
+.modal
+    &-full
+        margin: 0
+        max-width: 100%
+        width: 100%
+        min-height: 100vh
+        height: 100%
+        & .modal
+            &-content
+                border: 0
+                border-radius: 0
+            &-header
+                border-radius: 0
+            &-body
+                padding: 0
+
+
+// ** Navigation Classes
+.nav-tabs
+    & .nav-item
+        font-size: $font-sm
+        margin-bottom: -2px
+        &.active
+            position: relative
+            top: -1px
+            color: $color-black
+            font-family: $font-face-bold
+            border-top: $border-lg solid $color-one
+            background-color: $color-white
+            & .nav-link
+                color: $color-black
+                background-color: #fff
+                @include border-x ($x: $border-default)
+        &:not(.active)
+            border-top: $border-default
+            & .nav-link
+                border-bottom: $border-default
+        &:first-child
+            & .nav-link
+                border-left: $border-default
+        &:last-child
+            & .nav-link
+                border-right: $border-default
+        &:not(.active) + .nav-item
+            & .nav-link
+                border-left: $border-default
+        & .nav-link
+            color: #86a3bd
+            background-color: #fafdff
+            @include border-y ($y: 0)
+            border-radius: 0
+            padding: 0.65rem $gap-4
+
+
+.navbar-nav
+    & .hover-sub
+        cursor: pointer
+        &:hover .nav-menu-sub
+            display: block
+    & .nav-menu-sub
+        display: none
+        position: absolute
+        left: 0
+        bottom: -69px
+        width: 100%
+        background-color: #f7f7f7
+        border-bottom: 1px solid #ced4da !important
+        z-index: 1
+        & .container
+            display: flex
+            justify-content: center
+    & .nav-item-sub
+        color: $color-black
+        @include padding-x ($x: $gap-3)
+        border-bottom: $border-lg solid $color-transparent
+        padding: 1.25rem $gap-4
+        &:hover, &.active
+            color: $color-black !important
+            border-bottom: $border-lg solid $color-one
+
+
+// ** Object Fit Classes
+.fit
+    &-cover
+        object-fit: cover
+    &-fill
+        object-fit: fill
+    &-contain
+        object-fit: contain
+    &-scale-down
+        object-fit: scale-down
+    &-none
+        object-fit: none
+
+
+// ** Overflow Classes
+.overflow
+    &-auto
+        overflow: auto
+    &-hidden
+        overflow: hidden
+    &-x-hidden
+        overflow-x: hidden
+    &-y-hidden
+        overflow-y: hidden
+    &-x-scroll
+        overflow-x: scroll
+    &-y-scroll
+        overflow-y: scroll
+
+
+// ** Padding Classes
+.p
+    &-6
+        padding: 4rem
+    &-7
+        padding: 7rem
+    &-8
+        padding: 8rem
+
+.pt
+    &-6
+        padding-top: 4rem
+    &-7
+        padding-top: 7rem
+    &-8
+        padding-top: 8rem
+
+.pb
+    &-6
+        padding-bottom: 4rem
+    &-7
+        padding-bottom: 7rem
+    &-8
+        padding-bottom: 8rem
+
+.pr
+    &-6
+        padding-right: 4rem
+    &-7
+        padding-right: 7rem
+    &-8
+        padding-right: 8rem
+
+.pl
+    &-6
+        padding-right: 4rem
+    &-7
+        padding-right: 7rem
+    &-8
+        padding-right: 8rem
+
+.py
+    &-6
+        padding-top: 4rem
+        padding-bottom: 4rem
+    &-7
+        padding-top: 7rem
+        padding-bottom: 7rem
+    &-8
+        padding-top: 8rem
+        padding-bottom: 8rem
+
+.px
+    &-6
+        padding-left: 4rem
+        padding-right: 4rem    
+    &-7
+        padding-left: 7rem
+        padding-right: 7rem    
+    &-8
+        padding-left: 8rem
+        padding-right: 8rem
+
+
+// ** Pagination Classes
+.pagging-wrap
+    width: 100%
+    text-align: center
+    & .paginations
+        display: inline-block
+        padding-left: 0
+        margin: 20px 0
+        & > li
+            display: inline    
+        & > li > a,
+        & > li > button,
+        & > li > span
+            position: relative
+            float: left
+            padding: 6px 12px
+            margin: 0 2px
+            line-height: 1.42857143
+            color: #3A5966
+            text-decoration: none
+            background-color: #FAFAFA
+            border: 1px solid #ddd
+            min-width: 34px
+            -webkit-border-radius: 2px
+            -moz-border-radius: 2px
+            border-radius: 2px   
+            cursor: pointer     
+        & > li:first-child > a,
+        & > li > button,
+        & > li:first-child > span
+            margin-left: 0        
+        & > li > a:hover,
+        & > li > button:hover,
+        & > li > span:hover,
+        & > li > a:focus,
+        & > li > button:focus,
+        & > li > span:focus
+            z-index: 2
+            color: #1374A1
+            background-color: #fafafa
+            border-color: $color-one        
+        & > .active > a,
+        & > .active > button,
+        & > .active > span,
+        & > .active > a:hover,
+        & > .active > button:hover,
+        & > .active > span:hover,
+        & > .active > a:focus,
+        & > .active > button:focus,
+        & > .active > span:focus
+            z-index: 3
+            color: #fff !important
+            cursor: default
+            background-color: $color-one
+            border-color: $color-one 
+        & > .disabled > span,
+        & > .disabled > span:hover,
+        & > .disabled > span:focus,
+        & > .disabled > a,
+        & > .disabled > a:hover,
+        & > .disabled > a:focus,
+        & > .disabled > button,
+        & > .disabled > button:hover,
+        & > .disabled > button:focus
+            color: #777
+            cursor: not-allowed
+            background-color: #fafafa
+            border-color: #ddd
+
+
+// ** Positions Classes
+.relative
+    position: relative !important
+
+.fixed
+    position: fixed !important
+
+.sticky
+    position: sticky !important
+
+.static
+    position: static !important
+
+.absolute
+    position: absolute !important
+
+.top-0
+    top: 0
+
+.bottom-0
+    bottom: 0
+
+.left-0
+    left: 0
+
+.right-0
+    right: 0
+
+.x-0
+    left: 0
+    right: 0
+
+.y-0
+    top: 0
+    bottom: 0
+
+.all-0
+    @extend .x-0
+    @extend .y-0
+
+
+// ** Text Classes
+
+// Line Height
+.text
+    &-tall-md
+        line-height: $line-height-md
+
+// Overflow
+.text
+    &-ellipsis
+        @include text-ellipsis
+    &-overlay
+        @include display-flex($x: center, $y: center)
+        @include position-absolute-xy ($x: 0, $y: 0)
+        cursor: pointer
+        color: $color-white
+        background-color: rgba(0, 0, 0, 0.5)
+        padding: $gap-1
+
+// Size
+.text
+    &-xs
+        font-size: $font-xs
+        &-center
+            font-size: $font-sm
+            text-align: center
+    &-sm
+        font-size: $font-sm
+        &-center
+            font-size: $font-sm
+            text-align: center
+    &-md
+        font-size: $font-md
+        line-height: $line-height-md
+        &-center
+            font-size: $font-md
+            text-align: center
+    &-half-lg
+        font-size: $font-half-lg
+        line-height: $line-height-md
+        &-center
+            font-size: $font-half-lg
+            text-align: center
+    &-lg
+        font-size: $font-lg
+        line-height: $line-height-md
+        &-center
+            font-size: $font-lg
+            text-align: center
+    &-xl
+        font-size: $font-xl
+        line-height: $line-height-md
+        &-center
+            font-size: $font-xl
+            text-align: center
+    &-xxl
+        font-size: $font-xxl
+        line-height: $line-height-md
+        &-center
+            font-size: $font-xxl
+            text-align: center
+
+// Weight
+.text
+    &-semi-bold
+        font-weight: bold
+    &-bold
+        font-family: $font-face-bold
+    &-bolder
+        font-family: $font-face-bolder
+
+
+// ** Transform Classes
+.translate
+    &-y
+        &-min
+            &50
+                transform: translateY(-50%)
+            &25
+                transform: translateY(-25%)
+        &-50
+            transform: translateY(50%)
+        &-25
+            transform: translateY(25%)    
+    &-x
+        &-min
+            &50
+                transform: translateX(-50%)
+            &25
+                transform: translateX(-25%)
+        &-50
+            transform: translateX(50%)
+        &-25
+            transform: translateX(25%)
+
+
+// -------------------------------------- COLOR AND SHAPE ----------------------------------------- //
+.bg
+    &-one
+        background-color: $color-one
+    &-two
+        background-color: $color-two
+    &-three
+        background-color: $color-three
+    &-black
+        background-color: $color-black
+    &-white
+        background-color: $color-white
+    &-grey
+        background-color: $color-grey
+    &-red
+        background-color: $color-red
+    &-yellow
+        background-color: $color-yellow
+    &-orange
+        background-color: $color-orange
+    &-green
+        background-color: $color-green
+    &-blue
+        background-color: $color-blue
+    &-pink
+        background-color: $color-pink    
+    &-brown
+        background-color: $color-brown
+    &-purple
+        background-color: $color-purple
+
+.bg
+    &-one-2
+        background-color: $color-one-2
+    &-two-2
+        background-color: $color-two-2
+    &-three-2
+        background-color: $color-three-2
+    &-black-2
+        background-color: $color-black-2
+    &-white-2
+        background-color: $color-white-2
+    &-grey-2
+        background-color: $color-grey-2
+    &-red-2
+        background-color: $color-red-2
+    &-yellow-2
+        background-color: $color-yellow-2
+    &-orange-2
+        background-color: $color-orange-2
+    &-green-2
+        background-color: $color-green-2
+    &-blue-2
+        background-color: $color-blue-2
+    &-pink-2
+        background-color: $color-pink-2
+    &-brown-2
+        background-color: $color-brown-2
+    &-purple-2
+        background-color: $color-purple-2
+
+// Transparent
+@for $i from 1 through 9
+    .bg
+        &-one-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-one)
+        &-two-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-two)
+        &-black-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-black)
+        &-white-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-white)
+        &-grey-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-grey)
+        &-red-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-red)
+        &-yellow-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-yellow)
+        &-orange-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-orange)
+        &-green-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-green)
+        &-blue-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-blue)
+        &-pink-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-pink)
+        &-brown-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-brown)
+        &-purple-#{$i * 10}
+            @include opacity-color($alpha: $i * 10%, $color: $color-purple)
+
+@for $i from 1 through 9
+    .bg
+        &-one-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-one-2)
+        &-two-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-two-2)
+        &-black-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-black-2)
+        &-white-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-white-2)
+        &-grey-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-grey-2)
+        &-red-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-red-2)
+        &-yellow-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-yellow-2)
+        &-orange-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-orange-2)
+        &-green-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-green-2)
+        &-blue-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-blue-2)
+        &-pink-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-pink-2)
+        &-brown-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-brown-2)
+        &-purple-#{$i * 10}-2
+            @include opacity-color($alpha: $i * 10%, $color: $color-purple-2)
+
+
+.text, .hover-target
+    &-one
+        color: $color-one
+        &-center
+            color: $color-one
+            text-align: center
+            &-bold
+                @extend .text-one-center
+                @extend .text-one-bold            
+        &-bold
+            color: $color-one
+            font-family: $font-face-bold
+    &-two
+        color: $color-two
+        &-center
+            color: $color-two
+            text-align: center
+            &-bold
+                @extend .text-two-center
+                @extend .text-two-bold
+        &-bold
+            color: $color-two
+            font-family: $font-face-bold
+    &-three
+        color: $color-three
+        &-center
+            color: $color-three
+            text-align: center
+            &-bold
+                @extend .text-three-center
+                @extend .text-three-bold        
+        &-bold
+            color: $color-two
+            font-family: $font-face-bold
+    &-black
+        color: $color-black
+        &-center
+            color: $color-black
+            text-align: center
+            &-bold
+                @extend .text-black-center
+                @extend .text-black-bold        
+        &-bold
+            color: $color-black
+            font-family: $font-face-bold
+    &-white
+        color: $color-white
+        &-center
+            color: $color-white
+            text-align: center
+            &-bold
+                @extend .text-white-center
+                @extend .text-white-bold        
+        &-bold
+            color: $color-white
+            font-family: $font-face-bold
+    &-grey
+        color: $color-grey
+        &-center
+            color: $color-white
+            text-align: center
+            &-bold
+                @extend .text-grey-center
+                @extend .text-grey-bold        
+        &-bold
+            color: $color-grey
+            font-family: $font-face-bold
+    &-red
+        color: $color-red
+        &-center
+            color: $color-white
+            text-align: center
+            &-bold
+                @extend .text-red-center
+                @extend .text-red-bold        
+        &-bold
+            color: $color-red
+            font-family: $font-face-bold
+    &-yellow
+        color: $color-yellow
+        &-center
+            color: $color-yellow
+            text-align: center
+            &-bold
+                @extend .text-yellow-center
+                @extend .text-yellow-bold
+        &-bold
+            color: $color-yellow
+            font-family: $font-face-bold
+    &-orange
+        color: $color-orange
+        &-center
+            color: $color-orange
+            text-align: center
+            &-bold
+                @extend .text-orange-center
+                @extend .text-orange-bold
+        &-bold
+            color: $color-orange
+            font-family: $font-face-bold
+    &-green
+        color: $color-green
+        &-center
+            color: $color-green
+            text-align: center
+            &-bold
+                @extend .text-green-center
+                @extend .text-green-bold
+        &-bold
+            color: $color-green
+            font-family: $font-face-bold
+    &-blue
+        color: $color-blue
+        &-center
+            color: $color-blue
+            text-align: center
+            &-bold
+                @extend .text-blue-center
+                @extend .text-blue-bold
+        &-bold
+            color: $color-blue
+            font-family: $font-face-bold
+    &-pink
+        color: $color-pink
+        &-center
+            color: $color-pink
+            text-align: center
+            &-bold
+                @extend .text-pink-center
+                @extend .text-pink-bold
+        &-bold
+            color: $color-pink
+            font-family: $font-face-bold
+    &-brown
+        color: $color-brown
+        &-center
+            color: $color-brown
+            text-align: center
+            &-bold
+                @extend .text-brown-center
+                @extend .text-brown-bold
+        &-bold
+            color: $color-brown
+            font-family: $font-face-bold
+    &-purple
+        color: $color-purple
+        &-center
+            color: $color-purple
+            text-align: center
+            &-bold
+                @extend .text-purple-center
+                @extend .text-purple-bold
+        &-bold
+            color: $color-purple
+            font-family: $font-face-bold
+
+
+.badge, .circle, .pill
+    &-one
+        color: $color-white
+        background-color: $color-one
+    &-two
+        color: $color-white
+        background-color: $color-two
+    &-three
+        color: $color-white
+        background-color: $color-three
+    &-black
+        color: $color-white
+        background-color: $color-black
+    &-white
+        color: $color-black
+        background-color: $color-white
+    &-grey
+        color: $color-white
+        background-color: $color-grey
+    &-red
+        color: $color-white
+        background-color: $color-red
+    &-yellow
+        color: $color-white
+        background-color: $color-yellow
+    &-orange
+        color: $color-white
+        background-color: $color-orange
+    &-green
+        color: $color-white
+        background-color: $color-green
+    &-blue
+        color: $color-white
+        background-color: $color-blue
+    &-pink
+        color: $color-white
+        background-color: $color-pink
+    &-brown
+        color: $color-white
+        background-color: $color-brown
+    &-purple
+        color: $color-white
+        background-color: $color-purple
+
+.badge, .circle, .pill
+    &-one-2
+        background-color: $color-one-2
+        color: $color-white
+    &-two-2
+        background-color: $color-two-2
+        color: $color-white
+    &-three-2
+        background-color: $color-three-2
+        color: $color-white
+    &-black-2
+        background-color: $color-black-2
+        color: $color-white
+    &-white-2
+        background-color: $color-white-2
+        color: $color-black
+    &-grey-2
+        background-color: $color-grey-2
+        color: $color-white
+    &-red-2
+        background-color: $color-red-2
+        color: $color-white
+    &-yellow-2
+        background-color: $color-yellow-2
+        color: $color-white
+    &-orange-2
+        background-color: $color-orange-2
+        color: $color-white
+    &-green-2
+        background-color: $color-green-2
+        color: $color-white
+    &-blue-2
+        background-color: $color-blue-2
+        color: $color-white
+    &-pink-2
+        background-color: $color-pink-2
+        color: $color-white
+    &-brown-2
+        background-color: $color-brown-2
+        color: $color-white
+    &-purple-2
+        background-color: $color-purple-2
+        color: $color-white
+
+
+.badge, .circle, .pill
+    &-outline
+        &-one
+            color: $color-one
+            border: $border-xs solid $color-one
+        &-two
+            color: $color-two
+            border: $border-xs solid $color-two
+        &-three
+            color: $color-three
+            border: $border-xs solid $color-three
+        &-black
+            color: $color-three
+            border: $border-xs solid $color-three
+        &-white
+            color: $color-white
+            border: $border-xs solid $color-white
+        &-grey
+            color: $color-grey
+            border: $border-xs solid $color-grey
+        &-red
+            color: $color-red
+            border: $border-xs solid $color-red
+        &-yellow
+            color: $color-yellow
+            border: $border-xs solid $color-yellow
+        &-orange
+            color: $color-orange
+            border: $border-xs solid $color-orange
+        &-green
+            color: $color-green
+            border: $border-xs solid $color-green
+        &-blue
+            color: $color-blue
+            border: $border-xs solid $color-blue
+        &-pink
+            color: $color-pink
+            border: $border-xs solid $color-pink
+        &-brown
+            color: $color-brown
+            border: $border-xs solid $color-brown
+        &-purple
+            color: $color-purple
+            border: $border-xs solid $color-purple
+
+
+.badge, .circle, .pill
+    &-outline
+        &-one-2
+            color: $color-one-2
+            background-color: $color-white
+            border: $border-xs solid $color-one-2
+        &-two-2
+            color: $color-two-2
+            background-color: $color-white
+            border: $border-xs solid $color-two-2
+        &-three-2
+            color: $color-three-2
+            background-color: $color-white
+            border: $border-xs solid $color-one-2
+        &-black-2
+            color: $color-black-2
+            background-color: $color-white
+            border: $border-xs solid $color-black-2
+        &-white-2
+            color: $color-white-2
+            background-color: $color-white
+            border: $border-xs solid $color-white-2
+        &-grey-2
+            color: $color-grey-2
+            background-color: $color-white
+            border: $border-xs solid $color-grey-2
+        &-red-2
+            color: $color-red-2
+            background-color: $color-white
+            border: $border-xs solid $color-red-2
+        &-yellow-2
+            color: $color-yellow-2
+            background-color: $color-white
+            border: $border-xs solid $color-yellow-2
+        &-orange-2
+            color: $color-orange-2
+            background-color: $color-white
+            border: $border-xs solid $color-orange-2
+        &-green-2
+            color: $color-green-2
+            background-color: $color-white
+            border: $border-xs solid $color-green-2
+        &-blue-2
+            color: $color-blue-2
+            background-color: $color-white
+            border: $border-xs solid $color-blue-2
+        &-pink-2
+            color: $color-pink-2
+            background-color: $color-white
+            border: $border-xs solid $color-pink-2
+        &-brown-2
+            color: $color-brown-2
+            background-color: $color-white
+            border: $border-xs solid $color-brown-2
+        &-purple-2
+            color: $color-purple-2
+            background-color: $color-white
+            border: $border-xs solid $color-purple-2
+
+
+// ** Shape
+.circle
+    @include display-inline-flex ($x: center, $y: center)
+    border-radius: 50%
+    &-xs
+        @extend .circle
+        height: 30px
+        width: 23px
+    &-sm
+        @extend .circle
+        height: 43px
+        width: 43px
+    &-md
+        @extend .circle
+        height: 60px
+        width: 60px
+    &-lg
+        @extend .circle
+        height: 160px
+        width: 160px
+    &-xl
+        @extend .circle
+        height: 260px
+        width: 260px
+
+.pill
+    border-radius: $radius-pill
+    &-xs
+        @extend .pill
+        font-size: $font-xs
+        padding: 0.25rem 0.75rem
+    &-sm
+        @extend .pill
+        font-size: $font-sm
+        padding: 0.25rem 0.75rem
+    &-md
+        @extend .pill
+        font-size: $font-md
+        padding: 0.3rem 0.8rem
+    &-lg
+        @extend .pill
+        font-size: $font-lg
+        padding: 0.35rem 1rem
+    &-xl
+        @extend .pill
+        font-size: $font-xl
+        padding: 0.35rem 2rem
+
+
+// ------------------------------- PRELOAD HTML (LOADING) ------------------------------- //
+.skeleton-box
+    display: block
+    min-height: 1rem
+    min-width: 1rem
+    position: relative
+    overflow: hidden
+    background-color: #dddbdd
+    &::after
+        @include position-absolute ($top: 0, $bottom: 0, $left: 0, $right: 0)
+        -webkit-transform: translateX(-100%)
+        transform: translateX(-100%)
+        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(255, 255, 255, 0)), color-stop(20%, rgba(255, 255, 255, 0.2)), color-stop(60%, rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)))
+        background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0))
+        -webkit-animation: shimmer 2s infinite
+        animation: shimmer 2s infinite
+        content: ''
+
+@keyframes shimmer
+  100%
+    transform: translateX(100%)

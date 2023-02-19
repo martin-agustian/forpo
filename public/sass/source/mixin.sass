@@ -1,0 +1,112 @@
+
+// ** Border
+@mixin border ($top: null, $left: null, $right: null, $bottom: null)
+    border-top: $top
+    border-left: $left
+    border-right: $right
+    border-bottom: $bottom
+
+@mixin border-x ($x: null)
+    @include border ($left: $x, $right: $x)
+
+@mixin border-y ($y: null)
+    @include border ($top: $y, $bottom: $y)
+
+
+// ** Colors
+@mixin opacity-color($alpha,$color)
+    background-color: rgba(red($color), green($color), blue($color), $alpha)
+
+@mixin linear-gradient($direction, $list)
+    background: -webkit-linear-gradient($direction, $list)
+    background: -moz-linear-gradient($direction, $list)
+    background: -o-linear-gradient($direction, $list)
+    background: linear-gradient($direction, $list)
+
+@mixin radial-gradient($direction, $list)
+    background: -webkit-radial-gradient($direction, $list)
+    background: -moz-radial-gradient($direction, $list)
+    background: -o-radial-gradient($direction, $list)
+    background: radial-gradient($direction, $list)
+
+
+// ** Displays
+@mixin display-flex ($x: null, $y: null)
+    display: flex
+    align-items: $y
+    justify-content: $x
+
+@mixin display-inline-flex ($x: null, $y: null)
+    display: inline-flex
+    align-items: $y
+    justify-content: $x
+
+
+// ** Margin
+@mixin margin ($top: null, $left: null, $right: null, $bottom: null)
+    margin-top: $top
+    margin-left: $left
+    margin-right: $right
+    margin-bottom: $bottom
+
+@mixin margin-x ($x: null)
+    @include margin ($left: $x, $right: $x)
+
+@mixin margin-y ($y: null)
+    @include margin ($top: $y, $bottom: $y)
+
+
+// ** Padding
+@mixin padding ($top: null, $left: null, $right: null, $bottom: null)
+    padding-top: $top
+    padding-left: $left
+    padding-right: $right
+    padding-bottom: $bottom
+
+@mixin padding-x ($x: null)
+    @include padding ($left: $x, $right: $x)
+
+@mixin padding-y ($y: null)
+    @include padding ($top: $y, $bottom: $y)
+
+
+// ** Positions
+@mixin position-absolute ($top: null, $right: null, $left: null, $bottom: null)    
+    position: absolute
+    top: $top
+    right: $right
+    left: $left
+    bottom: $bottom
+
+@mixin position-absolute-xy ($x: null, $y: null)
+    @include position-absolute ($top: $y, $right: $x, $left: $x, $bottom: $y)
+
+
+// ** Row Gutters
+@mixin gutters ($px: null)
+    margin-left: -$px
+    margin-right: -$px
+    & > [class*="col"]
+        padding-left: $px
+        padding-right: $px
+
+
+// ** Text Overflow
+@mixin text-ellipsis
+    overflow-wrap: break-word
+    overflow: hidden
+    text-overflow: ellipsis
+    word-break: break-word
+    white-space: nowrap
+
+
+// ** Transform
+@mixin translate ($x, $y)
+    transform: translate($x, $y)
+
+@mixin scale ($scale)
+    transform: scale($scale)
+
+@mixin rotate ($deg)
+    transform: rotate(#{$deg}deg)
+    -webkit-transform: rotate(#{$deg}deg)
